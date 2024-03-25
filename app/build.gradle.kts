@@ -29,10 +29,20 @@ android {
 
     buildFeatures {
         viewBinding = true
+        dataBinding = true
     }
 }
 
 dependencies {
+
+    constraints {
+        implementation("org.jetbrains.kotlin-stdlib-jdk7:1.8.0") {
+            because("kotlin-stdlib-jdk7 is now apart of kotlin-stdlib-jdk8")
+        }
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0") {
+            because("kotlin-stdlib-jdk8 is now apart of kotlin-stdlib-jdk8")
+        }
+    }
 
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")

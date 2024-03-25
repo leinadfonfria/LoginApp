@@ -15,15 +15,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        binding.setUser(new User());
 
         binding.tvCreateNew.setOnClickListener((view) -> {
-            Log.d("depurando", "click create new ");
             Snackbar.make(view,getString(R.string.functionality_in_development),Snackbar.LENGTH_SHORT).show();
         });
 
         binding.tvGetNew.setOnClickListener((view) -> {
-            Log.d("depurando", "click get new ");
             Snackbar.make(view,getString(R.string.functionality_in_development),Snackbar.LENGTH_SHORT).show();
+        });
+
+        binding.loginButton.setOnClickListener((view) -> {
+            User loggedUser = binding.getUser();
+            Snackbar.make(view,"Logged User:" + loggedUser.getName(),Snackbar.LENGTH_SHORT).show();
         });
     }
 }
